@@ -30,7 +30,7 @@
     </style>
 </head>
 <body>
-    <div class="nav" style="background-color: rgb(43, 83, 84);"> <div class="logo">Ahmad Raza Khan</div> <div>Hey Click this button if you can!</div></div>
+    <div class="nav" style="background-color: rgb(43, 83, 84);"> <div class="logo">Ahmad Raza Khan</div> <div class="des">Hey Click this button if you can!</div></div>
     <div id="root"></div>
 </body>
 </html>
@@ -106,9 +106,7 @@ btn.addEventListener("mouseover", ()=>{
 })
 btn.addEventListener("click", ()=>{
     btn.innerText = "👹"
-    // btn.style.backgroundColor = "black"
     root.style.backgroundColor = "black"
-    // div.style.backgroundColor = "black"
     btn.style.transition = "0.7s"
     btn.style.opacity = "0"
     btn.style.transform = "scale(30) rotate(10deg)"
@@ -116,11 +114,14 @@ btn.addEventListener("click", ()=>{
     root.appendChild(audio)
     audio.setAttribute("src", "./public/ab.mp3")
     audio.play()
-    const main = document.querySelector(".main")
+    const des = document.querySelector(".des")
     const nav = document.querySelector(".nav")
-    main.style.display = "none"
+    const logo = document.querySelector(".logo")
+    des.style.display = "none"
     nav.style.display = "none"
+    logo.style.display = "none"
     root.style.height = "100vh"
     root.classList.remove("root")
+    root.style.overflow = "hidden"
 })
 </script>
