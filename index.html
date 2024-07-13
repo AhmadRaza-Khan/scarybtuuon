@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .nav{
+            width: 100vw;
+            height: 50px;
+            background-color: rgb(34, 74, 75);
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+        }
+        .main{
+            width: 100vw;
+            height: 50px;
+            background-color: gainsboro;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav" style="background-color: rgb(43, 83, 84);"> <div class="nav">Hey Click this button if you can!</div></div>
+   
+    <div id="root"></div>
+    <div class="main"><div class="logo">Ahmad Raza Khan</div></div>
+</body>
+</html>
+<script>
+    const root = document.getElementById("root");
+root.style.height = "calc(100vh - 100px)"
+root.style.display = "flex"
+root.style.alignItems = "center"
+root.style.justifyContent = "center"
+const div = document.createElement("div");
+root.append(div);
+const btn = document.createElement("button");
+btn.innerText = `Click me`
+btn.style.fontSize = "18px"
+btn.style.height = "40px"
+btn.style.width = "120px"
+btn.style.borderRadius = "5px"
+btn.style.border = "1px solid black"
+div.appendChild(btn)
+div.style.display = "flex"
+div.style.justifyContent = 'center'
+div.style.alignItems = 'center'
+div.style.height = "150px"
+div.style.width = '250px'
+div.style.position = "absolute"
+btn.style.zIndex = "100"
+div.addEventListener("mouseover", ()=>{
+    const b = 100 + Math.random() * 200
+    const c = 100 + Math.random() * 200
+    const a = 100 + Math.random() * 200
+    const d = 100 + Math.random() * 200
+    if(a <= 120){
+        btn.innerText = "Click me😅"
+    }
+    if(a > 120 && a < 200){
+        btn.innerText = "Click me🤣"
+    }
+    if(a > 220){
+        btn.innerText = "Click me😂"
+    }
+    const e =  Math.random() * 255
+    const f =  Math.random() * 255
+    const g =  Math.random() * 255
+    btn.style.backgroundColor = `rgb(${e},${f},${g})`
+    div.style.left = `${a}px`
+    div.style.right = `${c}px`
+    div.style.bottom = `${b}px`
+    div.style.top = `${d}px`
+})
+btn.addEventListener("mouseover", ()=>{
+    const b = 100 + Math.random() * 200
+    const c = 100 + Math.random() * 200
+    const a = 100 + Math.random() * 200
+    const d = 100 + Math.random() * 200
+    if(a <= 100){
+        btn.innerText = "Click me😅"
+    }
+    if(a > 100 && a < 200){
+        btn.innerText = "Click me🤣"
+    }
+    if(a > 200){
+        btn.innerText = "Click me😂"
+    }
+    const e =  Math.random() * 255
+    const f =  Math.random() * 255
+    const g =  Math.random() * 255
+    btn.style.backgroundColor = `rgb(${e},${f},${g})`
+    btn.style.left = `${a}px`
+    btn.style.right = `${c}px`
+    btn.style.bottom = `${b}px`
+    btn.style.top = `${d}px`
+})
+btn.addEventListener("click", ()=>{
+    btn.innerText = "👹"
+    btn.style.backgroundColor = "black"
+    root.style.backgroundColor = "black"
+    div.style.backgroundColor = "black"
+    btn.style.transition = "0.7s"
+    btn.style.opacity = "0"
+    btn.style.transform = "scale(30) rotate(10deg)"
+    const audio = document.createElement("audio");
+    root.appendChild(audio)
+    audio.setAttribute("src", "./public/ab.mp3")
+    audio.play()
+    const main = document.querySelector(".main")
+    const nav = document.querySelector(".nav")
+    main.style.display = "none"
+    nav.style.display = "none"
+    root.style.height = "100vh"
+})
+</script>
