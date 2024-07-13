@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./public/pexels-ahmedadly-1270184.jpg" />
     <title>Scarry-Button</title>
     <style>
         *{
@@ -10,38 +11,32 @@
             padding: 0;
             box-sizing: border-box;
         }
+       .root{
+        background-image: url(./public/pexels-pixabay-54332.jpg);
+        background-size: cover;
+        background-repeat: none;
+       }
         .nav{
             width: 100vw;
             height: 50px;
             background-color: rgb(34, 74, 75);
             color: black;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 25px;
-        }
-        .main{
-            width: 100vw;
-            height: 50px;
-            background-color: gainsboro;
-            color: black;
-            display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             font-size: 25px;
         }
     </style>
 </head>
 <body>
-    <div class="nav" style="background-color: rgb(43, 83, 84);"> <div class="nav">Hey Click this button if you can!</div></div>
-   
+    <div class="nav" style="background-color: rgb(43, 83, 84);"> <div class="logo">Ahmad Raza Khan</div> <div>Hey Click this button if you can!</div></div>
     <div id="root"></div>
-    <div class="main"><div class="logo">Ahmad Raza Khan</div></div>
 </body>
 </html>
 <script>
     const root = document.getElementById("root");
-root.style.height = "calc(100vh - 100px)"
+root.style.height = "calc(100vh - 50px)"
+root.classList.add("root")
 root.style.display = "flex"
 root.style.alignItems = "center"
 root.style.justifyContent = "center"
@@ -110,9 +105,9 @@ btn.addEventListener("mouseover", ()=>{
 })
 btn.addEventListener("click", ()=>{
     btn.innerText = "👹"
-    btn.style.backgroundColor = "black"
+    // btn.style.backgroundColor = "black"
     root.style.backgroundColor = "black"
-    div.style.backgroundColor = "black"
+    // div.style.backgroundColor = "black"
     btn.style.transition = "0.7s"
     btn.style.opacity = "0"
     btn.style.transform = "scale(30) rotate(10deg)"
@@ -125,5 +120,6 @@ btn.addEventListener("click", ()=>{
     main.style.display = "none"
     nav.style.display = "none"
     root.style.height = "100vh"
+    root.classList.remove("root")
 })
 </script>
